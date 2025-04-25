@@ -1,0 +1,639 @@
+{
+	"info": {
+		"_postman_id": "481ae31d-6ef0-4c99-b122-b007dfdca4f3",
+		"name": "Module 2 Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40320486"
+	},
+	"item": [
+		{
+			"name": "Get Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.1.:5000/customers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Alonso Pérez\",\r\n    \"phone_number\": \"+34 611 789 456\",\r\n    \"car_brand\": \"Citroën\",\r\n    \"car_type\": \"C3 Aircross\",\r\n    \"car_mileage\": 14000,\r\n    \"mechanical_issue\": \"Problemas en la suspensión\",\r\n    \"email\": \"alonso.perez@correo.es\",\r\n    \"password\": \"citroenFix2025\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/customers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer LoginToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sofia.balaguer@correo.es\",\r\n    \"password\": \"renault2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/customers/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers Tickets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDU1MzczNDgsImlhdCI6MTc0NTUzMzc0OCwic3ViIjoiMyJ9.qQCRaKCt4AxxXGk68Qjfrz8Exjmp3aXgtZDO9-vPDvk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/customers/my-tickets",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"my-tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sofía C Balaguer\",\r\n    \"phone_number\": \"+34 630 456 789\",\r\n    \"email\": \"sofia.balaguer@correo.es\",\r\n    \"password\": \"renault2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/customers/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.1.:5000/customers/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mechanic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/mechanics",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"mechanics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Mechanic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mechanic_name\": \"Carmen Muñoz\",\r\n    \"phone_number\": \"+34 615 321 987\",\r\n    \"email\": \"carmen.munoz@taller.com\",\r\n    \"address\": \"Calle San Fernando, 67, Zaragoza, Spain\",\r\n    \"salary\": 28000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/mechanics",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"mechanics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Mechanic",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mechanic_name\": \"José Ramón Castillo García\",\r\n    \"email\": \"jose.r.castillo@autosfix.es\",\r\n    \"address\": \"Avenida de Andalucía, 14, Sevilla, Spain\",\r\n    \"phone_number\": \"+34 622 111 222\",\r\n    \"salary\": 35000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/mechanics/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"mechanics",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Mechanic",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/mechanics/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"mechanics",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.1.:5000/inventory",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Inventory Seach",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.1.:5000/inventory/search?name=filtro",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"inventory",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "filtro"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Inventory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"battery\",\r\n    \"price\": 130.00,\r\n    \"quantity\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/inventory",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Inventory",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Freno de Disco Seat León Sport\",\r\n    \"price\": 125.00,\r\n    \"quantity\": 30\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/inventory/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"inventory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Inventory",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.1.:5000/inventory/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"inventory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Service Ticket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.1.:5000/service_tickets",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"service_tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Service Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_description\": \"Inspección y reparación de suspensión\",\r\n    \"cost\": 250.00,\r\n    \"vin_number\": \"VF7ABHMZ9HZ123456\",\r\n    \"work_complete\": false,\r\n    \"car_submission_date\": \"2025-04-25\",\r\n    \"work_start_date\": null,\r\n    \"work_finish_date\": null,\r\n    \"customer_id\": 4,\r\n    \"mechanic_id\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/service_tickets",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"service_tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Service Ticket Part",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"part_id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/service_tickets/1/add_part",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"service_tickets",
+						"1",
+						"add_part"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Service Ticket",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_description\": \"Reparación completa del sistema de frenos - Finalizada\",\r\n    \"cost\": 450.00,\r\n    \"vin_number\": \"VF3CA7NP0EY123456\",\r\n    \"work_complete\": true,\r\n    \"car_submission_date\": \"2025-04-20\",\r\n    \"work_start_date\": \"2025-04-21\",\r\n    \"work_finish_date\": \"2025-04-22\",\r\n    \"customer_id\": 2,\r\n    \"mechanic_id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.1.:5000/service_tickets/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"service_tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Service Ticket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/service_tickets/search?vin_number=VF7ABHMZ9HZ123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"service_tickets",
+						"search"
+					],
+					"query": [
+						{
+							"key": "vin_number",
+							"value": "VF7ABHMZ9HZ123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Service Ticket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.1.:5000/service_tickets/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"1",
+						""
+					],
+					"port": "5000",
+					"path": [
+						"service_tickets",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

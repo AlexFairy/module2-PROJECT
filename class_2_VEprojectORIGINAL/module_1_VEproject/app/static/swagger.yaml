@@ -1,0 +1,391 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Mechanic Shop"
+  description: "Module 2 for API"
+host: "localhost:5000"
+basePath: "/"
+schemes:
+  - "http"
+securityDefinitions:
+  BearerAuth:
+    type: "apiKey"
+    name: "Authorization"
+    in: "header"
+
+paths:
+  /customers:
+    get:
+      tags:
+        - "Customers"
+      summary: "Retrieve all customers (with pagination)"
+      parameters:
+        - name: "page"
+          in: "query"
+          type: "integer"
+          description: "Page number."
+        - name: "per_page"
+          in: "query"
+          type: "integer"
+          description: "Number of customers per page."
+      responses:
+        200:
+          description: "List of customers with pagination."
+        500:
+          description: "Server error."
+    post:
+      tags:
+        - "Customers"
+      summary: "Create a new customer"
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/Customer"
+      responses:
+        201:
+          description: "Customer created successfully."
+        400:
+          description: "Validation error."
+  /customers/{id}:
+    put:
+      tags:
+        - "Customers"
+      summary: "Update a customer's details"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Customer ID."
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/Customer"
+      responses:
+        200:
+          description: "Customer updated successfully."
+        404:
+          description: "Customer not found."
+        400:
+          description: "Validation error."
+    delete:
+      tags:
+        - "Customers"
+      summary: "Delete a customer"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Customer ID."
+      responses:
+        200:
+          description: "Customer deleted successfully."
+        404:
+          description: "Customer not found."
+
+  /mechanics:
+    get:
+      tags:
+        - "Mechanics"
+      summary: "Retrieve all mechanics"
+      responses:
+        200:
+          description: "List of mechanics."
+        500:
+          description: "Server error."
+    post:
+      tags:
+        - "Mechanics"
+      summary: "Create a new mechanic"
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/Mechanic"
+      responses:
+        201:
+          description: "Mechanic created successfully."
+        400:
+          description: "Validation error."
+  /mechanics/{id}:
+    put:
+      tags:
+        - "Mechanics"
+      summary: "Update a mechanic's details"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Mechanic ID."
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/Mechanic"
+      responses:
+        200:
+          description: "Mechanic updated successfully."
+        404:
+          description: "Mechanic not found."
+        400:
+          description: "Validation error."
+    delete:
+      tags:
+        - "Mechanics"
+      summary: "Delete a mechanic"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Mechanic ID."
+      responses:
+        200:
+          description: "Mechanic deleted successfully."
+        404:
+          description: "Mechanic not found."
+
+  /inventory:
+    get:
+      tags:
+        - "Inventory"
+      summary: "Retrieve all inventory items"
+      responses:
+        200:
+          description: "List of inventory items."
+        500:
+          description: "Server error."
+    post:
+      tags:
+        - "Inventory"
+      summary: "Create a new inventory item"
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/InventoryItem"
+      responses:
+        201:
+          description: "Inventory item created successfully."
+        400:
+          description: "Validation error."
+  /inventory/{id}:
+    put:
+      tags:
+        - "Inventory"
+      summary: "Update an inventory item's details"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Inventory item ID."
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/InventoryItem"
+      responses:
+        200:
+          description: "Inventory item updated successfully."
+        404:
+          description: "Inventory item not found."
+        400:
+          description: "Validation error."
+    delete:
+      tags:
+        - "Inventory"
+      summary: "Delete an inventory item"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Inventory item ID."
+      responses:
+        200:
+          description: "Inventory item deleted successfully."
+        404:
+          description: "Inventory item not found."
+
+  /service_tickets:
+    get:
+      tags:
+        - "Service Tickets"
+      summary: "Retrieve all service tickets"
+      responses:
+        200:
+          description: "List of service tickets."
+        500:
+          description: "Server error."
+    post:
+      tags:
+        - "Service Tickets"
+      summary: "Create a new service ticket"
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/ServiceTicket"
+      responses:
+        201:
+          description: "Service ticket created successfully."
+        400:
+          description: "Validation error."
+  /service_tickets/{id}:
+    put:
+      tags:
+        - "Service Tickets"
+      summary: "Update a service ticket's details"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Service ticket ID."
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: "#/definitions/ServiceTicket"
+      responses:
+        200:
+          description: "Service ticket updated successfully."
+        404:
+          description: "Service ticket not found."
+        400:
+          description: "Validation error."
+    delete:
+      tags:
+        - "Service Tickets"
+      summary: "Delete a service ticket"
+      parameters:
+        - name: "id"
+          in: "path"
+          type: "integer"
+          required: true
+          description: "Service ticket ID."
+      responses:
+        200:
+          description: "Service ticket deleted successfully."
+        404:
+          description: "Service ticket not found."
+
+definitions:
+  Customer:
+    type: object
+    required:
+      - name
+      - phone_number
+      - car_brand
+      - car_type
+      - car_mileage
+      - mechanical_issue
+      - email
+      - password
+    properties:
+      id:
+        type: integer
+        readOnly: true
+      name:
+        type: string
+      phone_number:
+        type: string
+      car_brand:
+        type: string
+      car_type:
+        type: string
+      car_mileage:
+        type: integer
+      mechanical_issue:
+        type: string
+      email:
+        type: string
+        format: email
+      password:
+        type: string
+
+  Mechanic:
+    type: object
+    required:
+      - mechanic_name
+      - email
+      - address
+      - phone_number
+      - salary
+    properties:
+      id:
+        type: integer
+        readOnly: true
+      mechanic_name:
+        type: string
+      email:
+        type: string
+        format: email
+      address:
+        type: string
+      phone_number:
+        type: string
+      salary:
+        type: number
+
+  InventoryItem:
+    type: object
+    required:
+      - name
+      - price
+      - quantity
+    properties:
+      id:
+        type: integer
+        readOnly: true
+      name:
+        type: string
+      price:
+        type: number
+      quantity:
+        type: integer
+
+  ServiceTicket:
+    type: object
+    required:
+      - service_description
+      - cost
+      - vin_number
+      - work_complete
+      - car_submission_date
+      - customer_id
+      - mechanic_id
+    properties:
+      id:
+        type: integer
+        readOnly: true
+      service_description:
+        type: string
+      cost:
+        type: number
+      vin_number:
+        type: string
+      work_complete:
+        type: boolean
+      car_submission_date:
+        type: string
+        format: date
+      work_start_date:
+        type: string
+        format: date
+      work_finish_date:
+        type: string
+        format: date
+      customer_id:
+        type: integer
+      mechanic_id:
+        type: integer
